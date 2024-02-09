@@ -11,7 +11,7 @@ export class ApiService {
     private httpClient: HttpClient
   ) { }
 
-  getUser(githubUsername: string) {
+  getUser(githubUsername: any) {
     return this.httpClient.get(`https://api.github.com/users/${githubUsername}`);
   }
 

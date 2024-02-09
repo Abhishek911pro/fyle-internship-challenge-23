@@ -8,7 +8,9 @@ import { ApiService } from './services/api.service';
 })
 export class AppComponent implements OnInit{
 
-  item="";
+  item="johnpapa";
+  name="";
+  data:any;
 
   constructor(
     private apiService: ApiService
@@ -24,7 +26,10 @@ export class AppComponent implements OnInit{
   }
 
   submit_input(){
-    this.apiService.getUser(this.item).subscribe(console.log);
-    console.log(this.item);
+
+    this.name=this.item;
+    this.data=this.apiService.getUser(this.name).subscribe((userData: any) => {
+      this.data = userData;});
+    // this.apiService.getUser(this.name).subscribe(console.log);
   }
 }

@@ -1,4 +1,13 @@
 <div class="p-2 border border-black bg-green-500">
-    <P>dashboard component works</P>
+    <ul *ngIf="searchTerm" >
+        <li><img class="rounded-full" src={{searchTerm.avatar_url}} alt="Image Description" width="200px"> </li>
+        <li >username: {{ searchTerm.login }}</li>
+        <li>locations: {{searchTerm.location}}</li>
+        <li>twitter: {{searchTerm.twitter_username}}</li>
+        <li>url: {{searchTerm.url}}</li>
+    </ul>
+</div>
+<div  class="p-2 border border-black bg-blue-100">
+    <div ></div>
 </div>
 
