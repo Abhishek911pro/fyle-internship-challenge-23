@@ -10,11 +10,16 @@ export class DashboardComponent {
 
   @Input() searchTerm:any ;
 
-  constructor(){}
+  constructor() { }
 
   ngOnInit(){
   }
-  
+  // urlRepo: any;
+
+  // runFunction(userData: any) {
+  //   this.urlRepo = userData.repos_url;
+  //     console.log(this.urlRepo);
+  // }
 
 
 }

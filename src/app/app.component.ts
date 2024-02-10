@@ -17,7 +17,7 @@ export class AppComponent implements OnInit{
   ) {}
 
   ngOnInit() {
-    this.apiService.getUser('johnpapa').subscribe(console.log);
+    // this.apiService.getUser('johnpapa').subscribe(console.log);
   }
 
   getInput(e:any){
@@ -30,6 +30,7 @@ export class AppComponent implements OnInit{
     this.name=this.item;
     this.data=this.apiService.getUser(this.name).subscribe((userData: any) => {
       this.data = userData;});
+      this.item = "";
     // this.apiService.getUser(this.name).subscribe(console.log);
   }
 }

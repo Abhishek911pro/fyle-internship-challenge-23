@@ -1,0 +1,12 @@
+<div *ngIf="data">
+    <div *ngFor="let repo of data">
+        <div class="p-2 border border-black bg-yellow-200">
+            <p>Name: {{ repo.name }}</p>
+            <p>Description: {{ repo.description }}</p>
+            <p>lang_url: {{ repo.languages_url }}</p>
+            <div>
+                <app-language [urlLanguage]="repo.languages_url"></app-language>
+            </div>
+        </div>
+    </div>
+  </div>
