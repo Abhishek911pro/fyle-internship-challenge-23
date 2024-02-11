@@ -1,12 +1,15 @@
-<div *ngIf="data">
-    <div *ngFor="let repo of data">
-        <div class="p-2 border border-black bg-yellow-200">
+<div *ngIf="data" class="grid grid-cols-2 gap-1">
+    <ng-container *ngFor="let repo of data | paginate: { itemsPerPage: numPages, currentPage: p }" >
+        <div class="p-2 border border-black rounded bg-yellow-200 w-3/4  mx-auto">
             <p>Name: {{ repo.name }}</p>
             <p>Description: {{ repo.description }}</p>
-            <p>lang_url: {{ repo.languages_url }}</p>
+            <!-- <p>lang_url: {{ repo.languages_url }}</p> -->
             <div>
                 <app-language [urlLanguage]="repo.languages_url"></app-language>
             </div>
         </div>
-    </div>
-  </div>
+    </ng-container>
+</div>
+<div>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

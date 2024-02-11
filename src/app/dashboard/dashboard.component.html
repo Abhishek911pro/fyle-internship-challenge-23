@@ -1,4 +1,4 @@
-<div class="p-2 border border-black bg-green-500">
+<div class="p-2 border border-black bg-green-500 w-1/2">
     <ul *ngIf="searchTerm" >
         <li><img class="rounded-full" src={{searchTerm.avatar_url}} alt="Image Description" width="200px"> </li>
         <li >username: {{ searchTerm.login }}</li>
@@ -9,8 +9,14 @@
         <li>repos: {{searchTerm.repos_url}}</li>
     </ul>
 </div>
+<span>
+    <select (change)="sNum($event)">
+        <option [value]="10">Select a number</option>
+        <option *ngFor="let item of myArray" [value]="item">{{ item }}</option>
+    </select>
+</span>
 <div  class="p-2 border border-black bg-blue-100">
-    <app-cards *ngIf="searchTerm" then [repoUrl]="searchTerm.repos_url"></app-cards>
+    <app-cards *ngIf="searchTerm" then [repoUrl]="searchTerm.repos_url" [selectedNumber]="num"  ></app-cards>
     
 </div>
 

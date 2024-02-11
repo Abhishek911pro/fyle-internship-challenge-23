@@ -1,8 +1,6 @@
-<div *ngIf="data">
-    <div *ngFor="let lang of getLanguageKeys()">
-      <div class=" border border-black bg-blue-200">
-        <p>Name: {{ lang }}</p>
-        <!-- <p>Occurrences: {{ data[lang] }}</p> -->
-      </div>
-    </div>
+<div *ngIf="data" class="flex flex-wrap">
+  <div *ngFor="let lang of getLanguageKeys()" class="w-1/10">
+    <p class="border border-black rounded p-1 m-1 bg-blue-200">{{ lang }}</p>
+    <!-- <p>Occurrences: {{ data[lang] }}</p> -->
   </div>
+</div>

@@ -9,14 +9,19 @@ import { RepoapiService } from '../services/repoapi.service';
 export class CardsComponent {
  
   @Input() repoUrl:any;
+  @Input() selectedNumber: any;
 
  constructor(private repoapiService: RepoapiService){}
 
  ngOnInit(){
-  
+  this.numPages = this.selectedNumber;
  }
  myurl:any;
  data:any;
+ p:number=1;
+ numPages:number=10;
+ toatalRepo:any;
+ 
 
  ngOnChanges(){
   if (this.repoUrl != null){
@@ -27,8 +32,10 @@ export class CardsComponent {
 
  getAll_repoDetails(){
   this.myurl=this.repoUrl
-  this.data=this.repoapiService.getRepo(this.myurl).subscribe((userData: any) => {
-    this.data = userData;});
+  this.data=this.repoapiService.getRepo(this.myurl,this.numPages,this.p).subscribe((userData: any) => {
+    this.data = userData;
+    this.toatalRepo = userData.length;});
+    
     // console.log(this.data);
   // this.apiService.getUser(this.name).subscribe(console.log);
 }

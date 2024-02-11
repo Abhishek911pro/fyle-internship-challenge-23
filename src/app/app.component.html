@@ -1,9 +1,9 @@
-<div>
+<div class="p-2">
  <h1>Fyle Internship Challenge</h1> 
   <input type="text" class="border border-black rounded" [(ngModel)]="item" (input)="getInput($event)">
   <button class="px-2 border border-black bg-blue-500 rounded" (click)="submit_input()"> search </button>
 </div>
 <br>
-<div>
+<div class="p-2">
   <app-dashboard [searchTerm]="data" ></app-dashboard>
 </div>

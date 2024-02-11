@@ -8,8 +8,11 @@ import { tap, throwError } from 'rxjs';
 export class RepoapiService {
 
   constructor(private httpClient: HttpClient) { }
+  myUrl:any;
+  cPage:number=1;
+  numPages:number=10;
 
-getRepo(myUrl: any) {
-  return this.httpClient.get(`${myUrl}`);
+getRepo(myUrl:any,cPage:number,numPages:number) {
+  return this.httpClient.get(`${myUrl}?per_page=${numPages}$page=${cPage}`);
 }
 }
